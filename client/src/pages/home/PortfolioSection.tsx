@@ -110,7 +110,7 @@ const PortfolioItem = ({
       {/* Bottom info bar that slides up on hover */}
       <div className="absolute bottom-0 left-0 right-0 bg-background dark:bg-gray-800 p-4 transform transition-transform duration-500 translate-y-full group-hover:translate-y-0">
         <h3 className="text-foreground font-semibold mb-1 truncate">{title}</h3>
-        <p className="text-muted text-sm line-clamp-1">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-1">{description}</p>
       </div>
     </div>
   );
@@ -247,7 +247,7 @@ const PortfolioSection = () => {
             {t("portfolio.title")}
             <span className="text-secondary">.</span>
           </h2>
-          <p className="text-muted text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             {t("portfolio.subtitle")}
           </p>
         </div>

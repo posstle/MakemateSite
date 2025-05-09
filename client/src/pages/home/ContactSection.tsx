@@ -115,7 +115,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{t("contact.phone.title")}</h3>
-                  <p className="text-muted">{t("contact.phone.number")}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{t("contact.phone.number")}</p>
                 </div>
               </div>
               
@@ -155,7 +155,7 @@ const ContactSection = () => {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-muted">
+                          <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
                             {t("contact.form.fullName")}
                           </FormLabel>
                           <FormControl>
@@ -175,7 +175,7 @@ const ContactSection = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-muted">
+                          <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
                             {t("contact.form.email")}
                           </FormLabel>
                           <FormControl>
@@ -196,7 +196,7 @@ const ContactSection = () => {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-muted">
+                        <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           {t("contact.form.company")}
                         </FormLabel>
                         <FormControl>
@@ -216,7 +216,7 @@ const ContactSection = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-muted">
+                        <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           {t("contact.form.subject")}
                         </FormLabel>
                         <FormControl>
@@ -236,7 +236,7 @@ const ContactSection = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-muted">
+                        <FormLabel className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           {t("contact.form.message")}
                         </FormLabel>
                         <FormControl>
@@ -265,7 +265,7 @@ const ContactSection = () => {
                           />
                         </FormControl>
                         <div className="space-y-1 leading-none">
-                          <FormLabel className="text-sm text-muted">
+                          <FormLabel className="text-sm text-gray-700 dark:text-gray-300">
                             {t("contact.form.agreement")} 
                             <a href="#" className="text-primary hover:underline ml-1">{t("contact.form.privacyPolicy")}</a> 
                             {t("contact.form.and")} 
