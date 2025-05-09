@@ -84,7 +84,7 @@ const ServiceCard = ({ icon, title, description, colorClass, index, features }: 
         {features.map((feature, idx) => (
           <div key={idx} className="flex items-start">
             <CheckCircle className="text-secondary flex-shrink-0 mt-1" size={16} />
-            <span className="ml-2 text-sm text-muted">{feature}</span>
+            <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">{feature}</span>
           </div>
         ))}
       </div>
@@ -225,7 +225,7 @@ const ServicesSection = () => {
             {t("services.title")}
             <span className="text-primary">.</span>
           </h2>
-          <p className="text-muted text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             {t("services.subtitle")}
           </p>
         </div>

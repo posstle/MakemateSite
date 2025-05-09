@@ -27,7 +27,7 @@ const Testimonial = ({ quote, author, position, image, index, isVisible }: Testi
         </div>
         
         <div className="mb-8 relative z-10">
-          <p className="text-lg md:text-xl text-muted italic">{quote}</p>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 italic">{quote}</p>
         </div>
         
         <div className="flex items-center">
@@ -43,7 +43,7 @@ const Testimonial = ({ quote, author, position, image, index, isVisible }: Testi
           </div>
           <div>
             <h4 className="font-semibold text-foreground">{author}</h4>
-            <p className="text-sm text-muted">{position}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{position}</p>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@ const TestimonialsSection = () => {
             {t("testimonials.title")}
             <span className="text-primary">.</span>
           </h2>
-          <p className="text-muted text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             {t("testimonials.subtitle")}
           </p>
         </div>

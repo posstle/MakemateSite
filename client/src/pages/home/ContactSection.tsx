@@ -78,7 +78,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("contact.title")}</h2>
-            <p className="text-muted text-lg mb-10 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 text-lg mb-10 leading-relaxed">
               {t("contact.subtitle")}
             </p>
             
@@ -91,7 +91,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{t("contact.location.title")}</h3>
-                  <p className="text-muted">{t("contact.location.address")}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{t("contact.location.address")}</p>
                 </div>
               </div>
               
@@ -103,7 +103,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{t("contact.email.title")}</h3>
-                  <p className="text-muted">{t("contact.email.address")}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{t("contact.email.address")}</p>
                 </div>
               </div>
               
