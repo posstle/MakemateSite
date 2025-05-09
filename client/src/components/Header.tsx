@@ -108,12 +108,12 @@ const Header = () => {
           </nav>
           
           <div className="hidden lg:block animate-slide-in-right">
-            <button 
-              onClick={() => scrollToSection("contact")} 
-              className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
+            <Link 
+              href="/contact"
+              className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg inline-block"
             >
               {t("nav.getInTouch")}
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -122,47 +122,53 @@ const Header = () => {
       <div className={`lg:hidden bg-background/95 backdrop-blur-sm border-t border-border ${isOpen ? 'block animate-slide-in-right' : 'hidden'}`}>
         <div className="container mx-auto px-6 py-4">
           <nav className="flex flex-col space-y-4">
-            <button 
-              onClick={() => scrollToSection("home")} 
+            <Link 
+              href="/"
               className="text-foreground hover:text-primary transition-colors duration-300"
+              onClick={closeMenu}
             >
               {t("nav.home")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("services")} 
+            </Link>
+            <Link 
+              href="/services"
               className="text-foreground hover:text-primary transition-colors duration-300"
+              onClick={closeMenu}
             >
               {t("nav.services")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("portfolio")} 
+            </Link>
+            <Link 
+              href="/portfolio"
               className="text-foreground hover:text-primary transition-colors duration-300"
+              onClick={closeMenu}
             >
               {t("nav.portfolio")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")} 
+            </Link>
+            <Link 
+              href="/about"
               className="text-foreground hover:text-primary transition-colors duration-300"
+              onClick={closeMenu}
             >
               {t("nav.about")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("contact")} 
+            </Link>
+            <Link 
+              href="/contact"
               className="text-foreground hover:text-primary transition-colors duration-300"
+              onClick={closeMenu}
             >
               {t("nav.contact")}
-            </button>
+            </Link>
             
             <div className="flex space-x-4 mt-2">
               <LanguageSelector mobile />
             </div>
             
-            <button 
-              onClick={() => scrollToSection("contact")} 
-              className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-md transition-all duration-300 text-center shadow-md hover:shadow-lg mt-2"
+            <Link 
+              href="/contact"
+              className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-md transition-all duration-300 text-center shadow-md hover:shadow-lg mt-2 block"
+              onClick={closeMenu}
             >
               {t("nav.getInTouch")}
-            </button>
+            </Link>
           </nav>
         </div>
       </div>
