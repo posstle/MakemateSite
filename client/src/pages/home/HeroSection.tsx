@@ -19,7 +19,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               {t("hero.title.part1")} <span className="text-primary">{t("hero.title.part2")}</span> {t("hero.title.part3")} <span className="text-secondary">{t("hero.title.part4")}</span>
             </h1>
-            <p className="text-lg text-muted mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
@@ -50,19 +50,19 @@ const HeroSection = () => {
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="text-center">
             <p className="text-3xl md:text-4xl font-bold text-primary mb-2">150+</p>
-            <p className="text-muted">{t("hero.stats.projects")}</p>
+            <p className="text-gray-600 dark:text-gray-300">{t("hero.stats.projects")}</p>
           </div>
           <div className="text-center">
             <p className="text-3xl md:text-4xl font-bold text-primary mb-2">98%</p>
-            <p className="text-muted">{t("hero.stats.satisfaction")}</p>
+            <p className="text-gray-600 dark:text-gray-300">{t("hero.stats.satisfaction")}</p>
           </div>
           <div className="text-center">
             <p className="text-3xl md:text-4xl font-bold text-primary mb-2">10+</p>
-            <p className="text-muted">{t("hero.stats.experience")}</p>
+            <p className="text-gray-600 dark:text-gray-300">{t("hero.stats.experience")}</p>
           </div>
           <div className="text-center">
             <p className="text-3xl md:text-4xl font-bold text-primary mb-2">25+</p>
-            <p className="text-muted">{t("hero.stats.team")}</p>
+            <p className="text-gray-600 dark:text-gray-300">{t("hero.stats.team")}</p>
           </div>
         </div>
       </div>

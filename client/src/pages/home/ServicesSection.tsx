@@ -73,7 +73,7 @@ const ServiceCard = ({ icon, title, description, colorClass, index, features }: 
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">{title}</h3>
-      <p className="text-muted mb-6">
+      <p className="text-gray-600 dark:text-gray-300 mb-6">
         {description}
       </p>
       

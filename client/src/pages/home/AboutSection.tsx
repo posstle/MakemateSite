@@ -23,22 +23,40 @@ interface TeamMemberProps {
 
 const TeamMember = ({ image, name, position, bio, socialLinks }: TeamMemberProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
-      <img 
-        src={image} 
-        alt={name} 
-        className="w-full h-64 object-cover"
-      />
+    <div className="bg-background dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 border border-border/20 hover:border-primary/30">
+      <div className="relative overflow-hidden">
+        <img 
+          src={image} 
+          alt={name} 
+          className="w-full h-64 object-cover transition-transform duration-700 hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 dark:from-gray-800/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+          <div className="text-white text-center transform translate-y-4 hover:translate-y-0 transition-transform duration-300">
+            <div className="flex justify-center space-x-2">
+              {socialLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.url} 
+                  className={`bg-white/10 hover:bg-white/20 p-2 rounded-full hover:${link.colorClass} transition-colors duration-300`}
+                  aria-label={`${name}'s social link`}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="p-6">
-        <h4 className="font-semibold text-xl mb-1">{name}</h4>
+        <h4 className="font-semibold text-xl mb-1 text-foreground">{name}</h4>
         <p className={`${position.includes("Creative") || position.includes("Project") ? 'text-secondary' : 'text-primary'} text-sm mb-4`}>{position}</p>
-        <p className="text-muted text-sm">{bio}</p>
+        <p className="text-gray-600 dark:text-gray-300 text-sm">{bio}</p>
         <div className="flex mt-4 space-x-3">
           {socialLinks.map((link, index) => (
             <a 
               key={index}
               href={link.url} 
-              className={`text-muted hover:${link.colorClass} transition-colors duration-300`}
+              className={`text-gray-500 dark:text-gray-400 hover:${link.colorClass} transition-colors duration-300`}
               aria-label={`${name}'s social link`}
             >
               {link.icon}
@@ -101,11 +119,23 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="py-20 bg-[#F8F9FA]">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-[#F8F9FA] dark:bg-gray-900/50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 dark:bg-secondary/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("about.title")}</h2>
-          <p className="text-muted text-lg max-w-3xl mx-auto">
+          <div className="inline-block mb-3">
+            <span className="bg-secondary/10 dark:bg-secondary/20 text-secondary px-4 py-1.5 rounded-full text-sm font-medium">
+              {t("about.title")}
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            {t("about.title")}
+            <span className="text-secondary">.</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             {t("about.subtitle")}
           </p>
         </div>
@@ -120,48 +150,69 @@ const AboutSection = () => {
           </div>
           
           <div>
-            <h3 className="text-2xl font-semibold mb-6">{t("about.story.title")}</h3>
-            <p className="text-muted mb-6 leading-relaxed">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground">{t("about.story.title")}</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               {t("about.story.p1")}
             </p>
-            <p className="text-muted mb-6 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               {t("about.story.p2")}
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-1">25+</h4>
-                <p className="text-sm text-muted">{t("about.stats.team")}</p>
+              <div className="text-center p-4 bg-background dark:bg-gray-800 rounded-lg shadow-md border border-border/20 hover:border-primary/30 transition-colors duration-300">
+                <h4 className="font-semibold text-lg mb-1 text-foreground">25+</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t("about.stats.team")}</p>
               </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-1">10+</h4>
-                <p className="text-sm text-muted">{t("about.stats.experience")}</p>
+              <div className="text-center p-4 bg-background dark:bg-gray-800 rounded-lg shadow-md border border-border/20 hover:border-primary/30 transition-colors duration-300">
+                <h4 className="font-semibold text-lg mb-1 text-foreground">10+</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t("about.stats.experience")}</p>
               </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-1">150+</h4>
-                <p className="text-sm text-muted">{t("about.stats.projects")}</p>
+              <div className="text-center p-4 bg-background dark:bg-gray-800 rounded-lg shadow-md border border-border/20 hover:border-primary/30 transition-colors duration-300">
+                <h4 className="font-semibold text-lg mb-1 text-foreground">150+</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t("about.stats.projects")}</p>
               </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-1">12</h4>
-                <p className="text-sm text-muted">{t("about.stats.awards")}</p>
+              <div className="text-center p-4 bg-background dark:bg-gray-800 rounded-lg shadow-md border border-border/20 hover:border-primary/30 transition-colors duration-300">
+                <h4 className="font-semibold text-lg mb-1 text-foreground">12</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t("about.stats.awards")}</p>
               </div>
             </div>
           </div>
         </div>
         
         <div className="mt-20">
-          <h3 className="text-2xl font-semibold mb-10 text-center">{t("about.team.title")}</h3>
+          <div className="text-center mb-10">
+            <div className="inline-block mb-3">
+              <span className="bg-primary/10 dark:bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
+                {t("about.team.title")}
+              </span>
+            </div>
+            <h3 className="text-2xl font-semibold text-foreground">
+              {t("about.team.title")}
+              <span className="text-primary">.</span>
+            </h3>
+          </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <TeamMember
-                key={index}
-                image={member.image}
-                name={member.name}
-                position={member.position}
-                bio={member.bio}
-                socialLinks={member.socialLinks}
-              />
+              <div 
+                key={index} 
+                className="transform transition-all duration-700 hover:translate-y-0"
+                style={{ 
+                  animationDelay: `${index * 100}ms`,
+                  animationDuration: '0.7s',
+                  animationFillMode: 'both',
+                  animationName: 'slideUp',
+                  animationTimingFunction: 'ease-out'
+                }}
+              >
+                <TeamMember
+                  image={member.image}
+                  name={member.name}
+                  position={member.position}
+                  bio={member.bio}
+                  socialLinks={member.socialLinks}
+                />
+              </div>
             ))}
           </div>
         </div>
