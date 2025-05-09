@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Globe } from "lucide-react";
 
 interface LanguageSelectorProps {
   mobile?: boolean;
@@ -34,13 +34,13 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ mobile = false }) =
       <>
         <button 
           onClick={() => changeLanguage('en')} 
-          className={`text-text hover:text-primary transition-colors duration-300 ${i18n.language === 'en' ? 'font-semibold text-primary' : ''}`}
+          className={`text-foreground hover:text-primary transition-colors duration-300 ${i18n.language === 'en' ? 'font-semibold text-primary' : ''}`}
         >
           EN
         </button>
         <button 
           onClick={() => changeLanguage('ko')} 
-          className={`text-text font-noto hover:text-primary transition-colors duration-300 ${i18n.language === 'ko' ? 'font-semibold text-primary' : ''}`}
+          className={`text-foreground font-noto hover:text-primary transition-colors duration-300 ${i18n.language === 'ko' ? 'font-semibold text-primary' : ''}`}
         >
           KR
         </button>
@@ -52,25 +52,26 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ mobile = false }) =
     <div className="relative" ref={dropdownRef}>
       <button 
         onClick={toggleDropdown}
-        className="flex items-center text-text hover:text-primary transition-colors duration-300"
+        className="flex items-center text-foreground hover:text-primary transition-colors duration-300 group"
       >
+        <Globe size={18} className="mr-1 group-hover:rotate-12 transition-transform duration-300" />
         <span>{i18n.language === 'ko' ? 'KR' : 'EN'}</span>
-        <ChevronDown className="ml-2" size={16} />
+        <ChevronDown className={`ml-1 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={14} />
       </button>
       
       {isOpen && (
-        <div className="absolute mt-2 py-2 w-24 bg-white rounded-md shadow-xl z-10">
+        <div className="absolute mt-2 py-2 w-32 bg-background border border-border rounded-md shadow-xl z-10 animate-fade-in">
           <button 
             onClick={() => changeLanguage('en')} 
-            className={`block px-4 py-2 text-sm text-text hover:bg-gray-100 w-full text-left ${i18n.language === 'en' ? 'font-semibold' : ''}`}
+            className={`block px-4 py-2 text-sm text-foreground hover:bg-primary/10 w-full text-left transition-colors duration-200 ${i18n.language === 'en' ? 'font-semibold bg-primary/5' : ''}`}
           >
-            English
+            🇺🇸 English
           </button>
           <button 
             onClick={() => changeLanguage('ko')} 
-            className={`block px-4 py-2 text-sm font-noto text-text hover:bg-gray-100 w-full text-left ${i18n.language === 'ko' ? 'font-semibold' : ''}`}
+            className={`block px-4 py-2 text-sm font-noto text-foreground hover:bg-primary/10 w-full text-left transition-colors duration-200 ${i18n.language === 'ko' ? 'font-semibold bg-primary/5' : ''}`}
           >
-            한국어
+            🇰🇷 한국어
           </button>
         </div>
       )}
