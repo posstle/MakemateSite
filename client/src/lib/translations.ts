@@ -79,6 +79,13 @@ export const resources = {
         subtitle: "Explore some of our recent web development projects that showcase our expertise and creativity.",
         viewCase: "View Case Study",
         startProject: "Start Your Project",
+        filters: {
+          all: "All",
+          web: "Web",
+          app: "App",
+          website: "Website",
+          webApp: "Web App"
+        },
         items: {
           ecommerce: {
             title: "Luxury Boutique E-commerce",
@@ -336,6 +343,13 @@ export const resources = {
         subtitle: "우리의 전문성과 창의성을 보여주는 최근 웹 개발 프로젝트를 살펴보세요.",
         viewCase: "사례 연구 보기",
         startProject: "프로젝트 시작하기",
+        filters: {
+          all: "전체",
+          web: "웹",
+          app: "앱",
+          website: "웹사이트",
+          webApp: "웹 앱"
+        },
         items: {
           ecommerce: {
             title: "럭셔리 부티크 이커머스",
