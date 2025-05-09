@@ -33,10 +33,13 @@ const Header = () => {
   };
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      closeMenu();
+    // Only scroll if on homepage
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        closeMenu();
+      }
     }
   };
 
@@ -67,36 +70,36 @@ const Header = () => {
           </div>
           
           <nav className="hidden lg:flex items-center space-x-6 animate-fade-in">
-            <button 
-              onClick={() => scrollToSection("home")} 
+            <Link 
+              href="/"
               className="text-foreground hover:text-primary transition-colors duration-300 hover-slide-up"
             >
               {t("nav.home")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("services")} 
+            </Link>
+            <Link 
+              href="/services"
               className="text-foreground hover:text-primary transition-colors duration-300 hover-slide-up"
             >
               {t("nav.services")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("portfolio")} 
+            </Link>
+            <Link 
+              href="/portfolio"
               className="text-foreground hover:text-primary transition-colors duration-300 hover-slide-up"
             >
               {t("nav.portfolio")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("about")} 
+            </Link>
+            <Link 
+              href="/about"
               className="text-foreground hover:text-primary transition-colors duration-300 hover-slide-up"
             >
               {t("nav.about")}
-            </button>
-            <button 
-              onClick={() => scrollToSection("contact")} 
+            </Link>
+            <Link 
+              href="/contact"
               className="text-foreground hover:text-primary transition-colors duration-300 hover-slide-up"
             >
               {t("nav.contact")}
-            </button>
+            </Link>
             
             <div className="flex items-center space-x-4">
               <LanguageSelector />
